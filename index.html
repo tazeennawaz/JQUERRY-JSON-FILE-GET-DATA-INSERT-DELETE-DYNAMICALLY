@@ -1,0 +1,123 @@
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <title>User tables</title>
+    <link rel="shortcut icon" href="#">
+    <style type="text/css">
+        span{
+            color:red;
+            visibility:unset;
+        }
+    </style>
+</head>
+<body>
+    <!-- navbar area, for filter input-->
+    <nav class="navbar sticky-top navbar-light bg-light">
+        <div class="container-fluid w-50">
+            <label for="search-user" class="col-sm-2 col-form-label">Search for employee:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="search-user" placeholder="Enter a name">
+                </div>
+        </div>
+    </nav>
+    <!-- /end of navbar area-->
+    <!-- part for displaying user content-->
+    <div class="container pt-5">
+        <h2>Users</h2>
+        <table class= "table table-stripped mb-5 align-middle" id="users">
+            <thead>
+                <tr>
+                    <th style="width:20%;" scope="col">#</th>
+                    <th style="width:20%;" scope="col">First</th>
+                    <th style="width:20%;" scope="col">Last</th>
+                    <th style="width:20%;" scope="col">Role</th>
+                    <th style="width:20%"  scope="col"></th>
+                    <th style="width:20%;" scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+        <h2>Senior Users</h2>
+        <table class= "table table-stripped mb-5 align-middle" id="senior-users">
+            <thead>
+                <tr>
+                    <th style="width:20%;" scope="col">#</th>
+                    <th style="width:20%;" scope="col">First</th>
+                    <th style="width:20%;" scope="col">Last</th>
+                    <th style="width:20%;" scope="col">Role</th>
+                    <th style="width:20%;" scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+             
+            </tbody>
+        </table>
+        <h2>WFM</h2>
+        <table class= "table table-stripped mb-5 align-middle" id="wfm-users">
+            <thead>
+                <tr>
+                    <th style="width:20%;" scope="col">#</th>
+                    <th style="width:20%;" scope="col">First</th>
+                    <th style="width:20%;" scope="col">Last</th>
+                    <th style="width:20%;" scope="col">Role</th>
+                    <th style="width:20%;" scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+              
+            </tbody>
+        </table>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-user-modal">
+            Add User
+        </button>
+    </div>
+    <!-- /end of displaying content-->
+    <!-- modal area-->
+    <div class="modal fade" id="add-user-modal" tabindex="-1" aria-labelledby="add-user-modal-label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="add-user-modal-label">Add a new user</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">Close</button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="first-name-input">First Name </label>
+                        <input type="text" class="form-control" id="firstnameinput" placeholder="Mark">
+                        <span  id = "spi1" >This field is required</span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="last-name-input">Last Name </label>
+                        <input type="text" class="form-control" id="lastnameinput" placeholder="Otto">
+                        <span  id = "spi2" >Please provide second name</span> 
+                    </div>
+                    <div class="mb-3">
+                        <label for="role-select">Role</label>
+                        <select class="form-select" id="roleselect" aria-label="Role select">
+                            <option selected>Select a role</option>
+                            <option value="1">User</option>
+                            <option value="2">Senior User</option>
+                            <option value="3">WFM</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary"id ="btnadd">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /end of modal area.-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
